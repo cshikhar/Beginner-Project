@@ -70,7 +70,13 @@ async function loadImage(searchTerm) {
     // Add error handling for image loading
     jokeImage.onerror = () => {
         // Fallback to a default image if loading fails
-        jokeImage.src = 'https://www.pexels.com/photo/close-up-photo-of-cat-with-its-eyes-closed-1183434/';
+        // jokeImage.src = 'https://www.pexels.com/photo/close-up-photo-of-cat-with-its-eyes-closed-1183434/';
+        const randomNumber = Math.floor(Math.random() * 10);
+        if (randomNumber < 5) {
+        jokeImage.src = 'https://upload.wikimedia.org/wikipedia/commons/c/c0/Nyesom_Wike_%282015%29.jpg';
+    } else {
+        jokeImage.src = '/public/bird.jpg';
+    }
     };
 }
 
